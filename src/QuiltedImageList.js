@@ -20,7 +20,7 @@ export default function QuiltedImageList({data}) {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
   const isMediumScreen = useMediaQuery(theme.breakpoints.up('md'));
-  const rowHeight = isLargeScreen ? 400 : (isMediumScreen ? 300 : 200); 
+  const rowsHeight = isLargeScreen ? 400 : (isMediumScreen ? 300 : 200); 
 
 
   return (
@@ -32,13 +32,13 @@ export default function QuiltedImageList({data}) {
       style={{padding:"1rem"}}
       variant="quilted"
       cols={isLargeScreen ? 3 : (isMediumScreen ? 2 : 2)}
-      rowHeight={400}
+      rowHeight={rowsHeight}
     >
       {data && data.map((item) => (
         <a key={item.id} href={item.links.download} download>
           <ImageListItem cols={item.cols || 1} key={item.id} rows={item.rows || 1}>
             <img
-              {...srcset(item.urls.regular, 121, item.rows, item.cols)}
+              {...srcset(item.urls.small, 121, item.rows, item.cols)}
               alt={item.title}
               loading="lazy"
               className='rounded'
