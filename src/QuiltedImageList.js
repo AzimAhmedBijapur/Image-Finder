@@ -38,10 +38,9 @@ export default function QuiltedImageList({data}) {
         <a key={item.id} href={item.links.download} download>
           <ImageListItem cols={item.cols || 1} key={item.id} rows={item.rows || 1}>
             <img
-              {...srcset(item.urls.large, 121, item.rows, item.cols)}
+              {...srcset(item.urls.regular, 121, item.rows, item.cols)}
               alt={item.title}
               loading="lazy"
-              src={item.urls.small}
               className='rounded'
             />
             <ImageListItemBar
