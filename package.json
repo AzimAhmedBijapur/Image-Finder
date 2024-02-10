@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "tail":"npx tailwindcss -i ./src/input.css -o ./src/index.css --watch"
+    "tail": "npx tailwindcss -i ./src/input.css -o ./src/index.css --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "tailwindcss": "^3.4.1"
   }
 }
