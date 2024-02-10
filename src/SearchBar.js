@@ -52,7 +52,7 @@ const SearchBar = () => {
             {!images && <div className="flex justify-center"><img src={noresults} alt="" width="30%"/></div>}
             {!isLoading && images && <QuiltedImageList data={images}/>}
             {isLoading && <div className="px-4 text-center text-xl py-2">Loading...</div>}
-            <div className="pagination flex justify-center mb-20 gap-x-4">
+            <div className="pagination flex justify-center mb-32 gap-x-4">
                 {!isLoading && page>1 && <button className="px-4 py-2 bg-blue-500 text-white font-bold rounded" onClick={()=>{setPage(page-1)}}>Previous</button>}
                 {!isLoading && page<totalPage && <button className="px-4 py-2 bg-blue-500 text-white font-bold rounded" onClick={()=>{setPage(page+1)}}>Next</button>}
             </div>
